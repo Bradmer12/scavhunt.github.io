@@ -1,0 +1,74 @@
+<script>
+  function checkAnswer(inputId) {
+    var answer = document.getElementById(inputId).value.toLowerCase();
+    var nextInputId = parseInt(inputId.slice(-1)) + 1;
+    var nextInput = "answer" + nextInputId;
+
+    var expectedAnswers = {
+      "answer1": "will smith",
+      "answer2": "immaculate heart of mary",
+      "answer3": "sheep",
+      "answer4": "mammillaria elegans"
+    };
+
+    if (expectedAnswers[inputId] === answer) {
+      if (nextInputId >= 5 && nextInputId <= 8) {
+        for (var i = 5; i <= 8; i++) {
+          var currentInput = "answer" + i;
+          document.getElementById(currentInput).style.display = "block";
+          document.querySelector("label[for='" + currentInput + "']").style.display = "inline-block";
+        }
+      } else if (document.getElementById(nextInput)) {
+        document.getElementById(nextInput).style.display = "block";
+        document.querySelector("label[for='" + nextInput + "']").style.display = "inline-block";
+        document.getElementById(nextInput).focus();
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var inputs = document.querySelectorAll("input[type='text']");
+    inputs.forEach(function(input) {
+      input.style.display = "none";
+      input.addEventListener("keyup", function() {
+        checkAnswer(input.id);
+      });
+    });
+    inputs[0].style.display = "block";
+    inputs[0].focus();
+  });
+</script>
+</head>
+<body>
+  Welcome to the scavenger hunt!
+  
+  <label for="answer1">Answer:</label>
+  <input type="text" id="answer1">
+  <br>
+  
+  <label for="answer2" style="display: none;">Answer 2:</label>
+  <input type="text" id="answer2" style="display: none;">
+  <br>
+
+  <label for="answer3" style="display: none;">Answer 3:</label>
+  <input type="text" id="answer3" style="display: none;">
+  <br>
+
+  <label for="answer4" style="display: none;">Answer 4:</label>
+  <input type="text" id="answer4" style="display: none;">
+  <br>
+
+  <label for="answer5" style="display: none;">Answer 5:</label>
+  <input type="text" id="answer5" style="display: none;">
+  <br>
+
+  <label for="answer6" style="display: none;">Answer 6:</label>
+  <input type="text" id="answer6" style="display: none;">
+  <br>
+
+  <label for="answer7" style="display: none;">Answer 7:</label>
+  <input type="text" id="answer7" style="display: none;">
+  <br>
+
+  <label for="answer8" style="display: none;">Answer 8:</label>
+  <input type="text" id="answer8" style="display: none;">
