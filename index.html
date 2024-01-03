@@ -40,22 +40,10 @@
     inputs[0].focus();
   });
 </script>
-  <script>
-    function toggleImage() {
-      var image = document.getElementById("popupImage");
-      if (image.style.display === "none") {
-        image.style.display = "block";
-      } else {
-        image.style.display = "none";
-      }
-    }
-  </script>
 </head>
 <body>
   Welcome to the scavenger hunt! You will have to find the location of each photo, then locate hidden note at each spot (circled in red).<br><br><br>
- <a href="javascript:void(0);" onclick="toggleImage()">Click here to see/hide image</a>
-  <br>
-  <img src="1.jpg" alt="Popup Image" id="popupImage" style="display: none;">
+ <a href="1.jpg" target="_blank">Click here to view your first clue</a>
 
   
   <label for="answer1">Answer:</label>
